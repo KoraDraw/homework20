@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+h1{
+    font-size: 36px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+}
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    color: rgb(47, 47, 250);
+}
+.container{
+    display: flex;
+    justify-content: space-around;
+    padding: 1em;
+}
+form{
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 2em;
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
+}
+.gender-field{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+input{
+    border-radius: 5px;
+    border-color: rgb(164, 247, 196);
+    gap: 2em;
+    height: 35px;
+    background-color: rgb(240, 240, 241);
+}
+select{
+    border-radius: 5px;
+    border-color: rgb(164, 247, 196);
+    gap: 2em;
+    height: 35px;
+    background-color: rgb(240, 240, 241);
+}
+.button-submit{
+    border-radius: 5px;
+    background: rgb(47, 47, 250);
+    color: white;
+    height: 35px;
+    width: 300px;
+    border: none;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="myForm" novalidate>
+            <h1 class="title">Заполните форму</h1>
+            <div class="errorsInfo"></div>
+            <div class="form-group">
+                <label for="name">Имя:</label>
+                <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required  placeholder="Введите вашу электронную почту">
+            </div>
+            <div class="form-group">
+                <label for="age">Возраст:</label>
+                <input type="number" id="age" name="age" required placeholder="Введите ваш возраст">
+            </div>
+            <div class="gender-field">
+                <label>Пол:</label><br/>
+                <label for="male">Мужской
+                    <input type="radio" name="gender" value="male" id="male" required>
+                </label>
+                <label for="female">Женский
+                    <input type="radio" name="gender" value="female" id="female" required>
+                </label>
+            </div>
+            <div class="form-group">
+                <label for="jobs">Ваша профессия</label>
+                <select name="jobs" id="jobs" required>
+                    <option value="Doctor">Врач</option>
+                    <option value="Teacher">Учитель</option>
+                    <option value="software developer">Программист</option>
+                    <option value="Shop assistant">Продавец-консультант</option>
+                    <option value="Engineer">Инженер</option>
+                    <option value="Designer">Дизайнер</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="password">Пароль</label>
+                <input type="text" id="password" name="password" minlength="2" required pattern="^[a-zA-Z]+$" placeholder="Введите ваш пароль">
+            </div>
+            <div class="personal-information">
+                <label>Согласие на обработку данных</label>
+                <label for="personal-information">
+                    <input type="checkbox" name="personalInformation" required>
+                </label>
+            </div>
+            <button class="button-submit" type="submit">Отправить</button>
+        </form>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
